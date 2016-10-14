@@ -25,8 +25,28 @@ public class Main {
         }
 
         for (String elementas : strMass) {
-            System.out.println(elementas);
+            VcsUtils.println(elementas);
         }
+
+        for (Dydziai dydis : Dydziai.values()) {
+            VcsUtils.println(dydis.name());
+            VcsUtils.println(dydis.getLt());
+            VcsUtils.println(dydis.getEn());
+
+            switch (dydis) {
+                case SMALL:
+                    VcsUtils.println("cha cha");
+                    break;
+                case MEDIUM:
+                    VcsUtils.println("dar paaugsi cha");
+                    break;
+                case LARGE:
+                    VcsUtils.println("varai");
+                    break;
+            }
+        }
+
+
 
         List<String> listas = Arrays.asList(strMass);
 
