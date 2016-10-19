@@ -8,6 +8,17 @@ public class User {
     private String vardas;
     private String pavarde;
     private final String klasesVardas;
+    private int amzius = 77;
+
+    public int getAmzius() {
+        return amzius;
+    }
+    public int getAmzius(int plius){
+        return amzius + plius;
+    }
+    public int getAmzius(String plius){
+        return amzius + new Integer(plius);
+    } //overload pavyzdys - leidzia tam paciam metodui grazinti skirtingu formatu grazininmus (int, string...)
 
     /**
      * User klases konstruktorius
@@ -16,13 +27,19 @@ public class User {
      */
 
     public User(String vardas, String pavarde) {
+        this(vardas);
         this.vardas = vardas;
-        this.pavarde = pavarde;
+    }
+    public User(String vardas) {
+        super();
+        this.vardas = vardas;
         this.klasesVardas = this.getClass().getName();
     }
 
+    @Override
     public String toString(){
-        String result = this.klasesVardas + ": " +
+        String result = "super: " + super.toString() +
+                " " + this.klasesVardas + ":" +
                 "vardas: " + this.vardas +
                 "pavarde: " + this.pavarde;
         return result;
